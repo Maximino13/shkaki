@@ -3,35 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-    <title>Document</title>
-    <style>
-        :root {
-            --white: #FFFFFF;  
-            --black: #0A0A0A;
-            --orange-primary-color: #FB5F11;
-            --text-input-field: #F7F7F7;
-            --gold-secondary-color: #BE9A2F; 
-
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        html {
-            font-size: 62.5%;
-            font-family: 'Quicksand', sans-serif;
-        }
-        body {
-            font-size: 1.6rem;
-            background-color: var(--black);
-        }
-    </style>
+    
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="shortcut icon" href="./assets/logos/icon-sello.svg" type="img">
+    
+    <title>Shkaki | Home</title>
 </head>
 <body>
+    <nav>
+        <img src="./assets/icons/menu.svg" alt="menu" class="menu">
+
+        <div class="navbar-left">
+            <img src="./assets/logos/logo-lateral1x.svg" alt="logo" class="logo">
+            <ul>
+                <li>
+                    <a href="/">Accesorios</a>
+                </li>
+            
+                <li>
+                    <a href="/">Pulsera</a>
+                </li>
+            
+                <li>
+                    <a href="/">Anillo</a>
+                </li>
+            
+                <li>
+                    <a href="/">Aretes</a>
+                </li>
+            
+                <li>
+                    <a href="/">Collar</a>
+                </li>
+            
+                <li>
+                    <a href="/">Gargantilla</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar-right">
+            <ul>
+                <li class="navbar-email">shkakimx@gmail.com</li>
+                <!-- <img src="./assets/icons/flechita.svg" alt=""> -->
+                <li class="navbar-shopping-cart">
+                    <img src="./assets/icons/shopping_cart.svg" alt="shopping cart">
+                    <div>2</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="desktop-menu inactive">
+            <ul>
+                <li>
+                    <a href="/" class="title">Mis pedidos</a>
+                </li>
     
+                <li>
+                    <a href="/" class="account">Mi cuenta</a>
+                </li>
+                
+                <li>
+                    <a href="/" class="sign">Cerrar sesión</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <script src="./main.js"></script>
 </body>
 </html>
