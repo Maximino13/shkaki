@@ -1,3 +1,4 @@
+/* Estilos generales */
 :root {
     --white: #FFFFFF;  
     --black: #0A0A0A;
@@ -71,6 +72,7 @@ nav {
 .navbar-email {
     color: var(--text-input-field);
     cursor: pointer;
+    user-select: none;
     font-size: var(--sm);
     margin-right: 12px;
 }
@@ -103,7 +105,7 @@ nav {
     align-items: center;
 }
 
-/* Tab Desktop Menu - Sign out(7) */
+/* Click Desktop Menu - Sign out(7) */
 .desktop-menu {
     background: var(--black);
     top: 64px; 
@@ -142,6 +144,40 @@ nav {
     display: inline-block;
 }
 
+/* Tab Mobile Menu - Menu(8)*/
+.mobile-menu {
+    position: absolute;
+    top: 60px;
+    padding: 24px;
+}
+.mobile-menu a { 
+    text-decoration: none;
+    color: var(--text-input-field);
+    font-weight: bold; 
+}
+.mobile-menu ul {
+    padding: 0; 
+    margin: 24px 0 0; 
+    list-style: none; 
+    font-size: var(--sm);
+}
+.mobile-menu ul:nth-child(1) {
+    border-bottom: 1px solid var(--gold-secondary-color);
+}
+.mobile-menu ul:nth-child(3) {
+    position: absolute;
+}
+.mobile-menu ul li {
+    margin-bottom: 24px; 
+}
+.mobile-menu .email {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+.mobile-menu .sign-out {
+    font-size: 1.2rem;
+    color: var(--orange-primary-color);
+}
 
 
 @media (max-width: 640px) {
@@ -154,6 +190,15 @@ nav {
         display: none;
     }
     .navbar-email {
+        display: none;
+    }
+    .desktop-menu {
+        display: none;
+    }
+}
+
+@media (min-width: 641px) {
+    .mobile-menu {
         display: none;
     }
 }
