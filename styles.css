@@ -186,6 +186,7 @@ aside {
     box-sizing: border-box;
     position: absolute;
     right: 0;
+    padding: 0 0 15px 0;
 } 
 
 /* ShoppingCart - Shopping Cart(13) */
@@ -286,6 +287,7 @@ aside {
     z-index: 2;
     padding: 12px;
     border-radius: 50%;
+    box-sizing: content-box;
 }
 .product-detail-close:hover {
     cursor: pointer; 
@@ -389,7 +391,7 @@ aside {
     height: 35px;
 }
 .product-card .product-info div p:nth-child(1) {
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 4px;
     font-weight: bold;
     font-size: var(--md);

@@ -1,30 +1,49 @@
 //Funcionalidades de botones (Mobile Menu[Lista de Accesorios], Email [Datos de Cuenta] y Shopping Cart[Pedidos realizados])
 const menuEmail = document.querySelector('.navbar-email'); 
-const desktopMenu = document.querySelector('.desktop-menu');
-const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
 const burguerMenu = document.querySelector('.menu');
+const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
+const productDetailCloseIcon = document.querySelector('.product-detail-close');
+const desktopMenu = document.querySelector('.desktop-menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
+const productDetailContainer = document.querySelector('#productDetail');
 const cardsContainer = document.querySelector('.cards-container');
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 burguerMenu.addEventListener('click', toggleMobileMenu);
 menuCarritoIcon.addEventListener('click', toggleCarritoAside);
+// closeMenuInfo.addEventListener("click", removeMenuInfo);
+productDetailCloseIcon.addEventListener('click', closeProductDetailAside);
 
 function toggleDesktopMenu() {  
     desktopMenu.classList.toggle('inactive');  //a través del metodo Toggle se accede a la Lista para Activarla (Si se encuentra inactiva) y vicersa
-    shoppingCartContainer.classList.add('inactive');// agregamos con Add el método innactivo 
+    shoppingCartContainer.classList.add('inactive'); // agregamos con Add el método innactivo al carrito de compras al abrir el menu en desktop
+    productDetailContainer.classList.add('inactive'); // agregamos con Add el método innactivo al aside de los detalles del producto al abrir el menu en desktop
 }
 
 function toggleMobileMenu() {
-    mobileMenu.classList.toggle('inactive');  //a través del metodo Toggle se accede a la Lista para Activarla (Si se encuentra inactiva) y vicersa
-    shoppingCartContainer.classList.add('inactive'); // agregamos con Add el método innactivo 
+    mobileMenu.classList.toggle('inactive');  //a través del metodo Toggle se accede a la Lista para Activarla (Si se encuentra inactiva) y vicersa menu del mobile
+    shoppingCartContainer.classList.add('inactive'); // "" "" al abrir el menu en mobile
+    productDetailContainer.classList.add('inactive');  // "" "" al abrir el menu en mobile
 }
 
 function toggleCarritoAside() {
     shoppingCartContainer.classList.toggle('inactive'); //a través del metodo Toggle se accede a la Lista para Activarla (Si se encuentra inactiva) y vicersa
     mobileMenu.classList.add('inactive'); // agregamos con Add el método innactivo 
     desktopMenu.classList.add('inactive'); // agregamos con Add el método innactivo 
+    productDetailContainer.classList.add('inactive');
+}
+
+function openProductDetailAside() {
+    shoppingCartContainer.classList.add('inactive');
+    productDetailContainer.classList.remove('inactive');
+    mobileMenu.classList.add('inactive');
+    desktopMenu.classList.add('inactive');
+
+}
+
+function closeProductDetailAside() {
+    productDetailContainer.classList.add('inactive');
 }
 
 // Contenido de productos 
@@ -84,6 +103,7 @@ function renderProducts(arr) {
         // product = {name, price, image} -> product.image
         const productImg = document.createElement('img'); //Crea el elemento imagen
         productImg.setAttribute('src', product.image); //Se le agrega el atributo a la imagen con la lista de productos del array que se hizo arriba
+        productImg.addEventListener('click', openProductDetailAside);
     
         const productInfo = document.createElement('div');  //Crea el contenido div
         productInfo.classList.add('product-info'); // Le añade la Clase product-info al productInfo (div)
